@@ -3,7 +3,7 @@
 一个仿 ASP.NET MVC 的 ServiceContainer 的 IoC 框架
 
 [![Build Status](https://www.travis-ci.org/LuckyStarry/luckystarry-ioc.svg?branch=master)](https://www.travis-ci.org/LuckyStarry/luckystarry-ioc?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/LuckyStarry/luckystarry-mvc/badge.svg?branch=master)](https://coveralls.io/github/LuckyStarry/luckystarry-ioc?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/LuckyStarry/luckystarry-ioc/badge.svg?branch=master)](https://coveralls.io/github/LuckyStarry/luckystarry-ioc?branch=master)
 [![Npm Status](https://img.shields.io/npm/v/luckystarry-ioc.svg)](https://www.npmjs.com/package/luckystarry-ioc)
 [![codebeat badge](https://codebeat.co/badges/f1c54a62-2552-484f-92d5-fd3166e3d468)](https://codebeat.co/projects/github-com-luckystarry-luckystarry-ioc-master)
 [![License Status](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://raw.githubusercontent.com/LuckyStarry/luckystarry-ioc/master/LICENSE)
