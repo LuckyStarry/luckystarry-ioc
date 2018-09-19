@@ -1,0 +1,66 @@
+{
+  "name": "luckystarry-ioc",
+  "version": "0.0.1-alpha",
+  "description": "一个轻量的类似于 ASP.NET MVC 的 IoC 框架",
+  "keywords": [
+    "ioc"
+  ],
+  "scripts": {
+    "prebuild": "del-cli dist -f",
+    "build": "tsc",
+    "pretest": "del-cli .nyc_output coverage -f",
+    "test": "nyc mocha",
+    "testonly": "mocha",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "dev": "gulp dev"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "reporter": [
+      "lcov",
+      "text",
+      "text-summary"
+    ],
+    "include": [
+      "src"
+    ],
+    "all": true
+  },
+  "main": "dist/index.js",
+  "dependencies": {
+    "reflect-metadata": "^0.1.12",
+    "typescript": "^3.0.3"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.9.2",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
+    "del-cli": "^1.1.0",
+    "gulp": "^3.9.1",
+    "mocha": "^5.2.0",
+    "nyc": "^13.0.1",
+    "should": "^13.2.3",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-standard": "^8.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh:git@github.com:LuckyStarry/luckystarry-ioc.git"
+  },
+  "bugs": {
+    "email": "starry@vip.qq.com",
+    "url": "https://github.com/LuckyStarry/luckystarry-ioc/issues"
+  },
+  "author": {
+    "name": "SUN BO",
+    "email": "starry@vip.qq.com",
+    "url": "https://www.luckystarry.com"
+  }
+}

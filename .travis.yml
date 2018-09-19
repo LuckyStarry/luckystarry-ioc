@@ -1,0 +1,55 @@
+language: node_js
+node_js:
+  - '8'
+install:
+  - npm install
+env:
+  global:
+    secure: 'gfGKgsX9f4n+LyGFEdmZ4rKjdTZ5HT8gVpGZb5h10vhBQjxWicynl5XLHLAgF8yalBchHy4dkrffq1g0FBsysW29LanqKSPa1Dfm5jJAQRabhTTcFPreyrp+fts2Jy/UZ7pk+Mx2tS+dI1Fc1wPpio88+rTS37RPpp8T9A53YEqhrRbclGMs/OP0d6rWFrP5vytyLPiRRF0tmbbZq6N9LeqbUk/mmdJOX1d/lXvJVB/4mxSxlsfC1w0tzQiZ3kh5CXWUZ/aAgyH/WabqhOTLnOKo63dodII1zJHfGoiaQbJMLT3IwYve8SuEb4Ydm+EPKDdfTMZJ1peMR7GbITqXUHMLcPzs93QDwd/FqFPuWkqMBAZMkCyBJbbGSEYAINJyR8rtGKcHO3hjB8oMQ0sO+f92mxjywZsMyHe/ojOPLpMITZAjlDt5UO/1OO5NXVpLYC2XVusDIR+CZg8YNdq0MXQpDLtRdWI0S7lNaapEdgUZpJSBHLaDUgbWvOxUk6bwJFquhdYak9C9nAIpoxAFFZKzmdqFmfQAg2klR7/MaGMetsZrc/D82dCz3rTkVPOU4fpfLpr0G4/Fkgs6fVJaNDg2+QdGkpSgMRyonZN8sTyFgvsY1DkhA5aiDA1AmA4U2mtCbcCdKZe4zZ9FT0IbxJghNJiNGDM7eogbArslb0k='
+
+jobs:
+  include:
+    - stage: test
+      script:
+        - node --version
+        - npm --version
+        - echo "Testing Started ..."
+        - npm test
+        - echo "Testing Finished."
+      after_success:
+        - npm run coverage
+
+    - stage: tagged-prerelease
+      if: tag =~ ^v\d+\.\d+\.\d+-.*$
+      deploy:
+        provider: releases
+        api_key: '$GH_TOKEN'
+        skip_cleanup: false
+        on:
+          tags: true
+        prerelease: true
+
+    - stage: npm-prerelease
+      if: tag =~ ^v\d+\.\d+\.\d+-.*$
+      script:
+        - echo "NPM Deploying Started ..."
+        - npm run build
+        - echo "NPM Building Finished."
+      deploy:
+        provider: npm
+        email: starry@vip.qq.com
+        api_key: '$NPM_TOKEN'
+        skip_cleanup: true
+        tag: beta
+
+    - stage: npm-release
+      if: tag =~ ^v\d+\.\d+\.\d+$
+      script:
+        - echo "NPM Deploying Started ..."
+        - npm run build
+        - echo "NPM Building Finished."
+      deploy:
+        provider: npm
+        email: starry@vip.qq.com
+        api_key: '$NPM_TOKEN'
+        skip_cleanup: true

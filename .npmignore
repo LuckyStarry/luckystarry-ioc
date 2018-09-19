@@ -1,0 +1,9 @@
+.vscode
+.nyc_output
+dist
+coverage
+node_modules
+
+npm-debug.log
+*.orig
+.travis.yml
