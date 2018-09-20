@@ -42,6 +42,15 @@ jobs:
         skip_cleanup: true
         tag: beta
 
+    - stage: tagged-release
+      if: tag =~ ^v\d+\.\d+\.\d+$
+      deploy:
+        provider: releases
+        api_key: '$GH_TOKEN'
+        skip_cleanup: false
+        on:
+          tags: true
+
     - stage: npm-release
       if: tag =~ ^v\d+\.\d+\.\d+$
       script:
