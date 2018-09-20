@@ -41,6 +41,8 @@ jobs:
         api_key: '$NPM_TOKEN'
         skip_cleanup: true
         tag: beta
+        on:
+          tags: true
 
     - stage: tagged-release
       if: tag =~ ^v\d+\.\d+\.\d+$
@@ -62,3 +64,5 @@ jobs:
         email: starry@vip.qq.com
         api_key: '$NPM_TOKEN'
         skip_cleanup: true
+        on:
+          tags: true
