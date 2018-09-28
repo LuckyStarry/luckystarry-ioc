@@ -5,6 +5,7 @@
 [![Build Status](https://www.travis-ci.org/LuckyStarry/luckystarry-ioc.svg?branch=master)](https://www.travis-ci.org/LuckyStarry/luckystarry-ioc?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/LuckyStarry/luckystarry-ioc/badge.svg?branch=master)](https://coveralls.io/github/LuckyStarry/luckystarry-ioc?branch=master)
 [![Npm Status](https://img.shields.io/npm/v/luckystarry-ioc.svg)](https://www.npmjs.com/package/luckystarry-ioc)
+[![install size](https://packagephobia.now.sh/badge?p=luckystarry-ioc)](https://packagephobia.now.sh/result?p=luckystarry-ioc)
 [![codebeat badge](https://codebeat.co/badges/3265bab9-f87a-4e77-8d2a-d4bf75b5592b)](https://codebeat.co/projects/github-com-luckystarry-luckystarry-ioc-master)
 [![License Status](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://raw.githubusercontent.com/LuckyStarry/luckystarry-ioc/master/LICENSE)
 
