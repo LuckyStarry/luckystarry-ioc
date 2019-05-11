@@ -7,6 +7,7 @@
 [![Npm Status](https://img.shields.io/npm/v/luckystarry-ioc.svg)](https://www.npmjs.com/package/luckystarry-ioc)
 [![install size](https://packagephobia.now.sh/badge?p=luckystarry-ioc)](https://packagephobia.now.sh/result?p=luckystarry-ioc)
 [![codebeat badge](https://codebeat.co/badges/3265bab9-f87a-4e77-8d2a-d4bf75b5592b)](https://codebeat.co/projects/github-com-luckystarry-luckystarry-ioc-master)
+[![Known Vulnerabilities](https://snyk.io/test/github/LuckyStarry/luckystarry-ioc/badge.svg?targetFile=package.json)](https://snyk.io/test/github/LuckyStarry/luckystarry-ioc?targetFile=package.json)
 [![License Status](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://raw.githubusercontent.com/LuckyStarry/luckystarry-ioc/master/LICENSE)
 
 ## Install
