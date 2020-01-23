@@ -84,7 +84,7 @@ export class ServiceCollection implements IServiceCollection {
       if (this.classPool.indexOf(val) === -1) {
         throw new Error(`${val}没有被注册`)
       } else {
-        return this.getService(val as any)
+        return this.GetService(val as any)
       }
     })
     return new type(...paramInstance)
