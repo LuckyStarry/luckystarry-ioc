@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { expect } from 'chai'
 import { Injectable } from '../src/injectable'
 import { ServiceCollection } from '../src/service-collection'
@@ -59,9 +60,7 @@ describe('ServiceCollection.AddSingleton', function() {
     let collection = new ServiceCollection()
     collection.AddSingleton(BaseClass, SubClass)
     let obj = collection.GetService(BaseClass)
-    // tslint:disable-next-line:no-unused-expression
     expect(obj instanceof BaseClass).is.true
-    // tslint:disable-next-line:no-unused-expression
     expect(obj.Name).is.equal(SubClass.name)
   })
 
@@ -69,11 +68,8 @@ describe('ServiceCollection.AddSingleton', function() {
     let collection = new ServiceCollection()
     collection.AddSingleton(TestService)
     let service = collection.GetService(TestService)
-    // tslint:disable-next-line:no-unused-expression
     expect(service).not.be.null
-    // tslint:disable-next-line:no-unused-expression
     expect(service).not.be.undefined
-    // tslint:disable-next-line:no-unused-expression
     expect(service instanceof TestService).is.true
   })
 
@@ -82,17 +78,11 @@ describe('ServiceCollection.AddSingleton', function() {
     collection.AddSingleton(TestService)
     collection.AddSingleton(TestBiz)
     let biz = collection.GetService(TestBiz)
-    // tslint:disable-next-line:no-unused-expression
     expect(biz).not.be.null
-    // tslint:disable-next-line:no-unused-expression
     expect(biz).not.be.undefined
-    // tslint:disable-next-line:no-unused-expression
     expect(biz instanceof TestBiz).is.true
-    // tslint:disable-next-line:no-unused-expression
     expect(biz.Service).not.be.null
-    // tslint:disable-next-line:no-unused-expression
     expect(biz.Service).not.be.undefined
-    // tslint:disable-next-line:no-unused-expression
     expect(biz.Service instanceof TestService).is.true
   })
 
@@ -108,19 +98,13 @@ describe('ServiceCollection.AddSingleton', function() {
     let collection = new ServiceCollection()
     collection.AddSingleton(TestService)
     let service1 = collection.GetService(TestService)
-    // tslint:disable-next-line:no-unused-expression
     expect(service1).not.be.null
-    // tslint:disable-next-line:no-unused-expression
     expect(service1).not.be.undefined
-    // tslint:disable-next-line:no-unused-expression
     expect(service1 instanceof TestService).is.true
 
     let service2 = collection.GetService(TestService)
-    // tslint:disable-next-line:no-unused-expression
     expect(service2).not.be.null
-    // tslint:disable-next-line:no-unused-expression
     expect(service2).not.be.undefined
-    // tslint:disable-next-line:no-unused-expression
     expect(service2 instanceof TestService).is.true
 
     expect(service1).to.equal(service2)
@@ -137,14 +121,12 @@ describe('ServiceCollection.AddSingleton', function() {
 
 @Injectable()
 class TestService {
-  // tslint:disable-next-line:no-empty
   public constructor() {}
 }
 
 @Injectable()
 class TestBiz {
   private service: TestService
-  // tslint:disable-next-line:no-empty
   constructor(service: TestService) {
     this.service = service
   }
@@ -156,7 +138,6 @@ class TestBiz {
 
 @Injectable()
 class TestServiceSelfRel {
-  // tslint:disable-next-line:no-empty
   constructor(obj: TestServiceSelfRel) {}
 }
 

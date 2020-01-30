@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { expect } from 'chai'
 import { ServiceCollection } from '../src/service-collection'
 

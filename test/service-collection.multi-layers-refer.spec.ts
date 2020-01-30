@@ -1,4 +1,4 @@
-// tslint:disable:no-unused-expression
+/* tslint:disable */
 import { expect } from 'chai'
 import { Injectable } from '../src/injectable'
 import { ServiceCollection } from '../src/service-collection'

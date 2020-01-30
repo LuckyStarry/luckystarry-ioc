@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { expect } from 'chai'
 import { Injectable } from '../src/injectable'
 import { ServiceCollection } from '../src/service-collection'
@@ -27,14 +28,12 @@ describe('ServiceCollection.AddSingleton', function() {
 
 @Injectable()
 class TestService {
-  // tslint:disable-next-line:no-empty
   public constructor() {}
 }
 
 @Injectable()
 class TestBiz {
   private service: TestService
-  // tslint:disable-next-line:no-empty
   constructor(service: TestService) {
     this.service = service
   }
