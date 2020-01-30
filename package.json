@@ -1,6 +1,6 @@
 {
   "name": "luckystarry-ioc",
-  "version": "0.2.0-0",
+  "version": "0.2.0",
   "description": "一个轻量的类似于 ASP.NET MVC 的 IoC 框架",
   "keywords": [
     "ioc"
