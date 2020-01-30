@@ -4,12 +4,13 @@ import { Injectable } from '../src/injectable'
 import { ServiceCollection } from '../src/service-collection'
 
 describe('ServiceCollection.AddSingleton', function() {
-  it('ServiceCollection.AddSingleton 用子类注册为基类的单例对象时，类型池错误的将注册类型即为子类', function() {
+  it('ServiceCollection.AddSingleton 用子类注册为基类的单例对象时，类型池注册的为基类', function() {
     let collection = new ServiceCollection()
     collection.AddSingleton(BaseService, TestService)
     collection.AddTransient(TestBiz)
 
-    expect(() => collection.GetService(TestBiz)).not.throw()
+    let biz = collection.GetService(TestBiz)
+    expect(biz.Service).instanceOf(TestService)
   })
 })
 

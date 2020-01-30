@@ -41,7 +41,7 @@ export class ServiceCollection implements IServiceCollection {
     if (impl) {
       if (impl instanceof Function) {
         this.mapping.set(type, impl)
-        this.addService(impl)
+        this.addService(type)
       } else {
         this.singletons.set(type, impl)
       }
