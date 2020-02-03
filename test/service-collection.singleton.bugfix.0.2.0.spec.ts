@@ -4,7 +4,7 @@ import { Injectable } from '../src/injectable'
 import { ServiceCollection } from '../src/service-collection'
 
 describe('ServiceCollection.AddSingleton', function() {
-  it('ServiceCollection.AddSingleton 用类型注册单例时，可能会被重复创建多次的问题', function() {
+  it('ServiceCollection.AddSingleton 修复 v0.2.0 的问题：用类型注册单例时，可能会被重复创建多次的问题', function() {
     let collection = new ServiceCollection()
     collection.AddSingleton(BaseService, TestService)
     collection.AddTransient(TestBiz)

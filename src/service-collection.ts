@@ -58,7 +58,9 @@ export class ServiceCollection implements IServiceCollection {
     }
     let mapped = this.mapping.get(type)
     if (mapped) {
-      return this.getService(mapped)
+      let instance = this.getService(mapped)
+      this.singletons.set(type, instance)
+      return instance
     }
     return this.getService(type)
   }
