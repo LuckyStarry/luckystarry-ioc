@@ -5,16 +5,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Set Nodejs Version To 10.x
+      - name: Set Nodejs Version To 12.x
         uses: actions/setup-node@v1.1.0
         with:
-          node-version: '10.x'
+          node-version: '12.x'
 
       - name: Install Dependencies
-        run:  npm install
+        run: npm install
 
       - name: Unit Tests
-        run:  npm test
-        
+        run: npm test
+
       - name: Build Source
-        run:  npm run build
+        run: npm run build
