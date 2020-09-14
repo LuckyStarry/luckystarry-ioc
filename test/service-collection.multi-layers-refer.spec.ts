@@ -3,8 +3,8 @@ import { expect } from 'chai'
 import { Injectable } from '../src/injectable'
 import { ServiceCollection } from '../src/service-collection'
 
-describe('ServiceCollection', function() {
-  it('三层依赖', function() {
+describe('ServiceCollection', function () {
+  it('三层依赖', function () {
     let collection = new ServiceCollection()
     collection.AddTransient(R1Class)
     collection.AddTransient(R2Class)

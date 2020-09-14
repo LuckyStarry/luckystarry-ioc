@@ -1,0 +1,1 @@
+{ "require": "ts-node/register", "bail": true, "recursive": true, "no-timeouts": true, "spec": "./test/**/*.spec.ts" }

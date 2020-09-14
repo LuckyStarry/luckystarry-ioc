@@ -1,3 +1,0 @@
---require test/mocha.tshook.js test/**/*.ts
---bail
---recursive

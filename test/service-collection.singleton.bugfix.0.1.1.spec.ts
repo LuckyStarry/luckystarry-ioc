@@ -3,8 +3,8 @@ import { expect } from 'chai'
 import { Injectable } from '../src/injectable'
 import { ServiceCollection } from '../src/service-collection'
 
-describe('ServiceCollection.AddSingleton', function() {
-  it('ServiceCollection.AddSingleton 获取的单例对象一直为同一个', function() {
+describe('ServiceCollection.AddSingleton', function () {
+  it('ServiceCollection.AddSingleton 获取的单例对象一直为同一个', function () {
     let collection = new ServiceCollection()
     let instance = new TestService()
     collection.AddSingleton(TestService, instance)
@@ -13,7 +13,7 @@ describe('ServiceCollection.AddSingleton', function() {
     expect(collection.GetService(TestService)).to.equal(instance)
   })
 
-  it('ServiceCollection.AddSingleton 依赖的单例对象一直为同一个', function() {
+  it('ServiceCollection.AddSingleton 依赖的单例对象一直为同一个', function () {
     let collection = new ServiceCollection()
     collection.AddSingleton(TestService)
     collection.AddTransient(TestBiz)
