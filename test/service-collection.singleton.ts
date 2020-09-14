@@ -3,15 +3,15 @@ import { expect } from 'chai'
 import { Injectable } from '../src/injectable'
 import { ServiceCollection } from '../src/service-collection'
 
-describe('ServiceCollection.AddSingleton', function() {
-  it('ServiceCollection.AddSingleton 无参构造类注册不报错', function() {
+describe('ServiceCollection.AddSingleton', function () {
+  it('ServiceCollection.AddSingleton 无参构造类注册不报错', function () {
     let collection = new ServiceCollection()
     expect(() => {
       collection.AddSingleton(TestService)
     }).not.throw()
   })
 
-  it('ServiceCollection.AddSingleton 重复注册不报错', function() {
+  it('ServiceCollection.AddSingleton 重复注册不报错', function () {
     let collection = new ServiceCollection()
     collection.AddSingleton(TestService)
     expect(() => {
@@ -19,7 +19,7 @@ describe('ServiceCollection.AddSingleton', function() {
     }).not.throw()
   })
 
-  it('ServiceCollection.AddSingleton 有参构造类注册不报错', function() {
+  it('ServiceCollection.AddSingleton 有参构造类注册不报错', function () {
     let collection = new ServiceCollection()
     expect(() => {
       collection.AddSingleton(TestService)
@@ -27,28 +27,28 @@ describe('ServiceCollection.AddSingleton', function() {
     }).not.throw()
   })
 
-  it('ServiceCollection.AddSingleton 有依赖构造类未注册依赖类时注册报错', function() {
+  it('ServiceCollection.AddSingleton 有依赖构造类未注册依赖类时注册报错', function () {
     let collection = new ServiceCollection()
     expect(() => {
       collection.AddSingleton(TestBiz)
     }).to.throw('没有被注册')
   })
 
-  it('ServiceCollection.AddSingleton 有自身依赖构造类注册报错', function() {
+  it('ServiceCollection.AddSingleton 有自身依赖构造类注册报错', function () {
     let collection = new ServiceCollection()
     expect(() => {
       collection.AddSingleton(TestServiceSelfRel)
     }).to.throw('不能依赖自身')
   })
 
-  it('ServiceCollection.AddSingleton 注册抽象类的具体实现不报错', function() {
+  it('ServiceCollection.AddSingleton 注册抽象类的具体实现不报错', function () {
     let collection = new ServiceCollection()
     expect(() => {
       collection.AddSingleton(BaseClass, SubClass)
     }).not.throw()
   })
 
-  it('ServiceCollection.AddSingleton 注册抽象类的对象不报错', function() {
+  it('ServiceCollection.AddSingleton 注册抽象类的对象不报错', function () {
     let collection = new ServiceCollection()
     let instance = new SubClass()
     expect(() => {
@@ -56,7 +56,7 @@ describe('ServiceCollection.AddSingleton', function() {
     }).not.throw()
   })
 
-  it('ServiceCollection.AddSingleton 注册抽象类的具体实现获取正常', function() {
+  it('ServiceCollection.AddSingleton 注册抽象类的具体实现获取正常', function () {
     let collection = new ServiceCollection()
     collection.AddSingleton(BaseClass, SubClass)
     let obj = collection.GetService(BaseClass)
@@ -64,7 +64,7 @@ describe('ServiceCollection.AddSingleton', function() {
     expect(obj.Name).is.equal(SubClass.name)
   })
 
-  it('ServiceCollection.AddSingleton 无参构造类获取正常', function() {
+  it('ServiceCollection.AddSingleton 无参构造类获取正常', function () {
     let collection = new ServiceCollection()
     collection.AddSingleton(TestService)
     let service = collection.GetService(TestService)
@@ -73,7 +73,7 @@ describe('ServiceCollection.AddSingleton', function() {
     expect(service instanceof TestService).is.true
   })
 
-  it('ServiceCollection.GetService 有参构造类获取正常', function() {
+  it('ServiceCollection.GetService 有参构造类获取正常', function () {
     let collection = new ServiceCollection()
     collection.AddSingleton(TestService)
     collection.AddSingleton(TestBiz)
@@ -86,7 +86,7 @@ describe('ServiceCollection.AddSingleton', function() {
     expect(biz.Service instanceof TestService).is.true
   })
 
-  it('ServiceCollection.GetService 有参构造类未注册依赖类时获取报错', function() {
+  it('ServiceCollection.GetService 有参构造类未注册依赖类时获取报错', function () {
     let pool = new Array<Function>(TestBiz)
     let collection = new ServiceCollection(pool)
     expect(() => {
@@ -94,7 +94,7 @@ describe('ServiceCollection.AddSingleton', function() {
     }).to.throw('没有被注册')
   })
 
-  it('ServiceCollection.GetService 每次获取的实例为相同实例', function() {
+  it('ServiceCollection.GetService 每次获取的实例为相同实例', function () {
     let collection = new ServiceCollection()
     collection.AddSingleton(TestService)
     let service1 = collection.GetService(TestService)
@@ -110,7 +110,7 @@ describe('ServiceCollection.AddSingleton', function() {
     expect(service1).to.equal(service2)
   })
 
-  it('ServiceCollection.AddSingleton 注册抽象类的对象获取时仍为原对象', function() {
+  it('ServiceCollection.AddSingleton 注册抽象类的对象获取时仍为原对象', function () {
     let collection = new ServiceCollection()
     let instance = new SubClass()
     collection.AddSingleton(BaseClass, instance)
