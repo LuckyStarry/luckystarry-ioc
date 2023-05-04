@@ -1,4 +1,3 @@
-export function Injectable() {
-  // tslint:disable-next-line:no-empty
-  return (type: Function) => {}
+export function Injectable(): ClassDecorator {
+  return (target: Function) => {}
 }
